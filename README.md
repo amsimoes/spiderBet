@@ -1,2 +1,2 @@
 # spiderBet
-Scrapy spider to crawl betting website
+Scrapy spider to crawl betting website (www.academiadasapostas.com)
