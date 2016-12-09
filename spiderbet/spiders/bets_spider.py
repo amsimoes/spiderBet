@@ -2,11 +2,6 @@ import scrapy
 
 class betSpider(scrapy.Spider):
 	name = "bets"
-	games = dict()
-
-	def __init__(self):
-		self.games = dict()
-
 
 	def start_requests(self):
 		self.games = dict()
