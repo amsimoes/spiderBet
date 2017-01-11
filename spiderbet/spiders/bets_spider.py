@@ -6,9 +6,15 @@ class betSpider(scrapy.Spider):
 
 	def start_requests(self):
 		urls = ["https://www.academiadasapostas.com"]
-		with open('/home/bequis/spiderBet/bets.txt', 'a') as f:
-			f.write("\n\n")
-			f.write(time.strftime("%d/%m/%Y")+"\n")
+		with open('bets.txt', 'a+') as f:
+			today = time.strftime("%d/%m/%Y")
+			flag = False
+			for line in f:
+				if today in line:
+					flag = True
+			if flag == True:
+				f.write("\n\n")
+				f.write(time.strftime("%d/%m/%Y")+"\n")
 		for url in urls:
 			yield scrapy.Request(url=url, callback=self.parse)
 

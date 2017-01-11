@@ -66,6 +66,7 @@ ROBOTSTXT_OBEY = True
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'spiderbet.pipelines.SpiderbetPipeline': 300,
+    'spiderbet.pipelines.ScoresPipeline': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
