@@ -19,6 +19,8 @@ class betScore(scrapy.Spider):
 			score['unique_id'] = link_game.split("/")[-3]
 			print(score['unique_id']+" | "+home_score+" - "+away_score)
 			score['score'] = home_score + " - " + away_score
+			yield score
+
 
 
 class Score(scrapy.Item):

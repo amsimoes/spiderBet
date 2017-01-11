@@ -4,7 +4,6 @@
 #
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
-import pygsheets
 
 
 class SpiderbetPipeline(object):
@@ -25,9 +24,13 @@ class SpiderbetPipeline(object):
 class ScoresPipeline(object):
 	def process_item(self, item, spider):
 		if spider.name == 'scores':
-			with open('bets.txt', 'r+') as f:
-				for line in f:
-					if item['unique_id'] in line:
-						line += " | "+item['score']
+			with open('bets.txt', 'r') as f:
+				lines = f.readlines()
+			for i in range(len(lines)):
+				if item['unique_id'] in lines[i] and item['score'] not in lines[i]:
+					lines[i] = lines[i].rstrip('\n')+" | "+item['score']+"\n"
+					break
+			with open('bets.txt', 'w') as f:
+				f.writelines(lines)
 		else:
 			return item
