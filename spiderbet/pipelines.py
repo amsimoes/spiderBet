@@ -27,7 +27,7 @@ class ScoresPipeline(object):
 			with open('bets.txt', 'r') as f:
 				lines = f.readlines()
 			for i in range(len(lines)):
-				if item['unique_id'] in lines[i] and item['score'] not in lines[i]:
+				if item['unique_id'] in lines[i] and item['score'] not in lines[i] and valid_score(item['score']) == True:
 					lines[i] = lines[i].rstrip('\n')+" | "+item['score']+"\n"
 					break
 			with open('bets.txt', 'w') as f:

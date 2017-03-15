@@ -14,6 +14,10 @@ class betScore(scrapy.Spider):
 		for game in fixtures.xpath('.//tr[contains(@type, "match")]'):
 			score = Score()
 			link_game = game.xpath('./td[contains(@class,"stats")]/a/@href').extract()[0]
+			status = str(game.xpath('./td[contains(@class, "status")]/span/text()').extract()[0].strip())
+			if status != "Terminado":
+				continue
+			score['status'] = status
 			home_score = str(game.xpath('./td[contains(@class,"score")]/a//span/text()').extract()[0].strip())
 			away_score = str(game.xpath('./td[contains(@class,"score")]/a//span/text()').extract()[2].strip())
 			score['unique_id'] = link_game.split("/")[-3]
@@ -26,3 +30,4 @@ class betScore(scrapy.Spider):
 class Score(scrapy.Item):
 	unique_id = scrapy.Field()
 	score = scrapy.Field()
+	status = scrapy.Field()
