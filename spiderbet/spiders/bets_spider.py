@@ -1,5 +1,10 @@
 import scrapy
 import time
+import os
+
+# TODO
+# bets.txt -> Google sheets
+# deploy digitalocean + cron?
 
 class betSpider(scrapy.Spider):
 	name = "bets"
@@ -12,8 +17,9 @@ class betSpider(scrapy.Spider):
 			for line in f:
 				if today in line:
 					flag = True
-			if flag == True:
-				f.write("\n\n")
+			if flag == False:
+				if os.path.getsize('bets.txt') > 0:
+					f.write("\n\n")
 				f.write(time.strftime("%d/%m/%Y")+"\n")
 		for url in urls:
 			yield scrapy.Request(url=url, callback=self.parse)
@@ -38,7 +44,8 @@ class betSpider(scrapy.Spider):
 		game = response.meta
 		info = response.xpath('//div[contains(@id,"stattips")]//div[\
 			contains(@class,"preview_bet")]')
-		game['odd'] = odd = info.xpath('.//text()').extract()[1].split(" ")[-1]
+		odd = info.xpath('.//text()').extract()[1].split(" ")[-1]
+		game['odd'] = odd.replace(".", ",")
 		game['tip'] = tip = info.xpath('.//text()').extract()[0].strip()
 		return game
 
