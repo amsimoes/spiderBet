@@ -16,7 +16,7 @@ class SpiderbetPipeline(object):
 						if item['unique_id'] in line:
 							flag = True
 				if flag == False:
-					f.write(item['unique_id']+" | "+item['date']+" | "+item['match']+" | "+item['tip']+" | "+item['odd']+'\n')
+					f.write(item['unique_id']+" , "+item['date']+" , "+item['match']+" , "+item['tip']+" , "+item['odd']+'\n')
 		else:
 			return item
 
@@ -28,7 +28,7 @@ class ScoresPipeline(object):
 				lines = f.readlines()
 			for i in range(len(lines)):
 				if item['unique_id'] in lines[i] and item['score'] not in lines[i] and valid_score(item['score']) == True:
-					lines[i] = lines[i].rstrip('\n')+" | "+item['score']+"\n"
+					lines[i] = lines[i].rstrip('\n')+" , "+item['score']+"\n"
 					break
 			with open('bets.txt', 'w') as f:
 				f.writelines(lines)

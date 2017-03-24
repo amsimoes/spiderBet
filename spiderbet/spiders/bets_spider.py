@@ -12,7 +12,7 @@ class betSpider(scrapy.Spider):
 	name = "bets"
 
 	def start_requests(self):
-		urls = ["https://www.academiadasapostas.com"]
+		urls = ["https://www.onlinebettingacademy.com/"]
 		with open('bets.txt', 'r') as f:
 			today = time.strftime("%d/%m/%Y")
 			print ("Today = " + today)
@@ -50,7 +50,8 @@ class betSpider(scrapy.Spider):
 		info = response.xpath('//div[contains(@id,"stattips")]//div[\
 			contains(@class,"preview_bet")]')
 		odd = info.xpath('.//text()').extract()[1].split(" ")[-1]
-		game['odd'] = odd.replace(".", ",")
+		#game['odd'] = odd.replace(".", ",")
+		game['odd'] = odd
 		game['tip'] = tip = info.xpath('.//text()').extract()[0].strip()
 		return game
 
