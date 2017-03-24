@@ -1,0 +1,13 @@
+16/03/2017
+2421041 | 20:05 | Man Utd X Rostov | Manchester United para vencer | 1,30
+2421037 | 20:05 | M'gladbach X Schalke 04 | Hipótese dupla, Borussia M'gladbach ou Empate | 1,34
+2422554 | 22:30 | Vitória X Vasco | Empate devolve: Vitória | 1,70
+2422555 | 22:30 | Corinthians X Luverdense | Ambas equipas marcam? Não | 1,70
+2421035 | 20:05 | Anderlecht X APOEL | Anderlecht para vencer | 1,55
+2421043 | 18:00 | Besiktas X Olympiakos | Besiktas para vencer | 1,60
+2421045 | 18:00 | Genk X Gent | Mais de 2,5 golos | 1,65
+2421033 | 18:00 | Krasnodar X Celta de Vigo | Mais de 1,5 golos | 1,40
+2421039 | 20:05 | Roma X Lyon | Mais de 2,5 golos | 1,40
+2391636 | 22:30 | Chapecoense X Lanús | Hipótese dupla, Chapecoense ou Empate | 1,34
+2401108 | 00:00 | Peñarol X Tucumán | Menos de 2,5 golos | 1,61
+2421047 | 20:05 | Ajax X Copenhaga | Mais de 1,5 golos | 1,34

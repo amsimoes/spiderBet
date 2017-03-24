@@ -3,6 +3,8 @@ import time
 import os
 
 # TODO
+# crawl the english version
+# crawl the odd provider (if exists)
 # bets.txt -> Google sheets
 # deploy digitalocean + cron?
 
