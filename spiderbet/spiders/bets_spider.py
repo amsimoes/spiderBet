@@ -13,16 +13,19 @@ class betSpider(scrapy.Spider):
 
 	def start_requests(self):
 		urls = ["https://www.academiadasapostas.com"]
-		with open('bets.txt', 'a+') as f:
+		with open('bets.txt', 'r') as f:
 			today = time.strftime("%d/%m/%Y")
+			print ("Today = " + today)
 			flag = False
 			for line in f:
+				print ("line = " + line)
 				if today in line:
 					flag = True
-			if flag == False:
-				if os.path.getsize('bets.txt') > 0:
-					f.write("\n\n")
-				f.write(time.strftime("%d/%m/%Y")+"\n")
+			with open('bets.txt', 'a+') as f:
+				if flag == False:
+					if os.path.getsize('bets.txt') > 0:
+						f.write("\n\n")
+					f.write(time.strftime("%d/%m/%Y")+"\n")
 		for url in urls:
 			yield scrapy.Request(url=url, callback=self.parse)
 
