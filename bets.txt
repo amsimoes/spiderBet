@@ -1,10 +1,10 @@
 24/03/2017
 2116375 , 19:45 , Spain X Israel , 1X2 TR & Both teams Score - Spain Yes , 2.95
-2116374 , 19:45 , Liechtenstein X Macedonia , Under 2,5 goals , 1.85
-2328336 , 00:00 , Patronato X NOB , Under 2,5 goals , 1.60
-2116419 , 19:45 , Croatia X Ukraine , Croatia wins , 1.50
-2292043 , 23:00 , Trinidad X Panama , Draw no bet, Panama , 1.66
-2116284 , 19:45 , Austria X Moldova , Over 2,5 goals , 1.75
-2116285 , 19:45 , Ireland X Wales , Over 1,5 goals , 1.50
-2116373 , 19:45 , Italy X Albania , Asian Handicap, Italy -1.5 , 1.80
+2292043 , 23:00 , Trinidad X Panama , Draw no bet. Panama , 1.66
+2116374 , 19:45 , Liechtenstein X Macedonia , Under 2.5 goals , 1.85
 2253307 , 19:45 , Kosovo X Iceland , Iceland wins , 1.33
+2328336 , 00:00 , Patronato X NOB , Under 2.5 goals , 1.60
+2116284 , 19:45 , Austria X Moldova , Over 2.5 goals , 1.75
+2116373 , 19:45 , Italy X Albania , Asian Handicap. Italy -1.5 , 1.80
+2116419 , 19:45 , Croatia X Ukraine , Croatia wins , 1.50
+2116285 , 19:45 , Ireland X Wales , Over 1.5 goals , 1.50

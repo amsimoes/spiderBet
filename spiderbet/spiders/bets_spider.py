@@ -13,6 +13,8 @@ class betSpider(scrapy.Spider):
 
 	def start_requests(self):
 		urls = ["https://www.onlinebettingacademy.com/"]
+		if os.path.isfile("bets.txt") == False:
+			open('bets.txt', 'w').close()
 		with open('bets.txt', 'r') as f:
 			today = time.strftime("%d/%m/%Y")
 			print ("Today = " + today)
