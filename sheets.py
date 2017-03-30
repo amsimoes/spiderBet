@@ -1,5 +1,6 @@
 import httplib2
 import os
+import json
 
 from apiclient import discovery
 from apiclient.http import MediaFileUpload
@@ -49,18 +50,50 @@ def get_credentials():
     return credentials
 
 
-def main():
-	credentials = get_credentials()
-	http = credentials.authorize(httplib2.Http())
-	drive_service = discovery.build('drive', 'v3', http=http)
+def drive_upload(http):
+    drive_service = discovery.build('drive', 'v3', http=http)
+    file_metadata = {
+        'name' : 'AcademiaDasApostas',
+        'mimeType' : 'application/vnd.google-apps.spreadsheet'
+    }
 
-	file_metadata = {
-		'name' : 'AcademiaDasApostas',
-		'mimeType' : 'application/vnd.google-apps.spreadsheet'
-	}
-	media = MediaFileUpload('bets.txt', mimetype='text/csv', resumable=True)
-	file = drive_service.files().update(fileId=file_id, body=file_metadata, media_body=media, fields='id').execute()
-	print(file)
+    media = MediaFileUpload('bets.txt', mimetype='text/csv', resumable=True)
+    file = drive_service.files().update(fileId=file_id, body=file_metadata, media_body=media, fields='id').execute()
+    print(file)
+
+
+def sheets_update(sheets_service, grid_id):
+    body = {
+        "requests": [
+            {
+                "autoResizeDimensions": {
+                    "dimensions": {
+                      "sheetId": grid_id,
+                      "dimension": "COLUMNS"
+                    }
+                }
+            }
+        ],
+    }
+
+    response = sheets_service.spreadsheets().batchUpdate(spreadsheetId=file_id, body=body).execute()
+    print (response)
+
+
+def get_grid_id(sheets_service):    
+    response = sheets_service.spreadsheets().get(spreadsheetId=file_id, includeGridData=True).execute()
+    return response['sheets'][0]['properties']['sheetId']
+
+
+def main():
+    credentials = get_credentials()
+    http = credentials.authorize(httplib2.Http())
+
+    sheets_discoveryUrl = ('https://sheets.googleapis.com/$discovery/rest?version=v4')
+    sheets_service = discovery.build('sheets', 'v4', http=http, discoveryServiceUrl=sheets_discoveryUrl)
+
+    drive_upload(http)
+    sheets_update(sheets_service, get_grid_id(sheets_service))
 
 
 if __name__ == '__main__':
