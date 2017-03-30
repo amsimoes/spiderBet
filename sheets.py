@@ -68,12 +68,19 @@ def sheets_update(sheets_service, grid_id):
             {
                 "autoResizeDimensions": {
                     "dimensions": {
-                      "sheetId": grid_id,
-                      "dimension": "COLUMNS"
+                        "sheetId": grid_id,
+                        "dimension": "COLUMNS"
+                    }
+                }
+            },
+            {
+                "setDataValidation": {
+                    "range": {
+                        "sheetId": grid_id
                     }
                 }
             }
-        ],
+        ]
     }
 
     response = sheets_service.spreadsheets().batchUpdate(spreadsheetId=file_id, body=body).execute()
