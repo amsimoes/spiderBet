@@ -6,6 +6,19 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
+def tip_format_comma(tip):
+	new_tip = ""
+	if ',' in tip:
+		aux = tip.split(',')
+		new_tip += aux[0]
+		for i in range(1,len(aux)):
+			if aux[i][0] == " ":
+				new_tip += ":" + aux[i][0:]
+			else:
+				new_tip += "." + aux[i][0:]
+		return new_tip
+	return tip
+
 class SpiderbetPipeline(object):
 	def process_item(self, item, spider):
 		if spider.name == 'bets':
@@ -16,7 +29,8 @@ class SpiderbetPipeline(object):
 						if item['unique_id'] in line:
 							flag = True
 				if flag == False:
-					item['tip'] = item['tip'].replace(",", ":")
+					#item['tip'] = item['tip'].replace(",", ".")
+					item['tip'] = tip_format_comma(item['tip'])
 					item['odd'] = '\'' + item['odd']
 					f.write(item['unique_id']+" , "+item['date']+" , "+item['match']+" , "+item['tip']+" , "+item['odd']+'\n')
 		else:

@@ -72,6 +72,19 @@ def sheets_update(sheets_service, grid_id):
                         "dimension": "COLUMNS"
                     }
                 }
+            },
+            {
+                "repeatCell": {
+                    "range": {
+                        "sheetId": grid_id
+                    },
+                    "cell": {
+                        "userEnteredFormat": {
+                            "horizontalAlignment" : "CENTER"
+                        }
+                    },
+                    "fields": "userEnteredFormat(horizontalAlignment)"
+                }
             }
         ]
     }
