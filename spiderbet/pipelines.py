@@ -17,6 +17,7 @@ class SpiderbetPipeline(object):
 							flag = True
 				if flag == False:
 					item['tip'] = item['tip'].replace(",", ":")
+					item['odd'] = '\'' + item['odd']
 					f.write(item['unique_id']+" , "+item['date']+" , "+item['match']+" , "+item['tip']+" , "+item['odd']+'\n')
 		else:
 			return item
