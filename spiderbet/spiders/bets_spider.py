@@ -12,9 +12,10 @@ class betSpider(scrapy.Spider):
 	name = "bets"
 
 	def start_requests(self):
-		urls = ["https://www.onlinebettingacademy.com/"]
+		urls = ["https://www.academiadasapostas.com/"]
 		if os.path.isfile("bets.txt") == False:
-			open('bets.txt', 'w').close()
+			with open('bets.txt', 'w') as f:
+				f.write("Data / ID , Hora , Jogo , Tip , Odd")
 		with open('bets.txt', 'r') as f:
 			today = time.strftime("%d/%m/%Y")
 			print ("Today = " + today)

@@ -72,19 +72,16 @@ def sheets_update(sheets_service, grid_id):
                         "dimension": "COLUMNS"
                     }
                 }
-            },
-            {
-                "setDataValidation": {
-                    "range": {
-                        "sheetId": grid_id
-                    }
-                }
             }
         ]
     }
 
     response = sheets_service.spreadsheets().batchUpdate(spreadsheetId=file_id, body=body).execute()
     print (response)
+
+
+def list_cond_formats(sheets_service):
+    response = sheets_service.spreadsheets().get(spreadsheetId=file_id, fields=sheets(properties(title,sheetId),conditionalFormats)).execute()
 
 
 def get_grid_id(sheets_service):    

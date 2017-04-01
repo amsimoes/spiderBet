@@ -6,8 +6,6 @@
 # See: http://doc.scrapy.org/en/latest/topics/item-pipeline.html
 
 
-# TODO: item['tip'] replace comma to : if not inbetween 2 numbers
-
 class SpiderbetPipeline(object):
 	def process_item(self, item, spider):
 		if spider.name == 'bets':
@@ -17,8 +15,8 @@ class SpiderbetPipeline(object):
 					for line in f1:
 						if item['unique_id'] in line:
 							flag = True
-				if flag == False:
-					item['tip'] = item['tip'].replace(",", ".")
+				if flag == False and float(item['odd']) >= 1.32:
+					item['tip'] = item['tip'].replace(",", ":")
 					f.write(item['unique_id']+" , "+item['date']+" , "+item['match']+" , "+item['tip']+" , "+item['odd']+'\n')
 		else:
 			return item
