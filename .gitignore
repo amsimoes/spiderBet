@@ -38,3 +38,4 @@ Thumbs.db
 
 client_secret.json
 bets.txt
+*.sh
