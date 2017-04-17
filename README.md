@@ -41,3 +41,4 @@ In the cronscript I also include this python script after the scrapy executions.
 * Scores spider scraping with sucess but broken when run from cron
 * Sometimes one scrapy crawl isn't enough to get all available data, most likely for requests failure, my fix being crawling 3 times in the cron script with 1 minute interval
 * Data gathering only works for the day matches even if the webapp has tips for the next days that the user can see with some interaction
+* Spreadsheet/txt file order is from older to newer games/tips scraped, for an easier view it should show last gathered data on top
