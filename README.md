@@ -29,7 +29,7 @@ This feature would be an automatic way of checking if the tip was sucessful in p
 `$ scrapy crawl scores`
 
 There are 2 different spiders, one to scrap the tips (bets) and the other to scrap the scores (scores).
-I have them being called everyday using a cron script running in my server: the bets one at 10am and the scores one at 11pm after the games are finished.
+I have them being called everyday on a cronjob running in my server: the bets one at 10am and the scores one at 11pm after the games are finished.
 
 Afterwards, I call a python script to upload/update the google sheets:
 
