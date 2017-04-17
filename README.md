@@ -1,7 +1,6 @@
 # spiderBet
 Scrapy spider to crawl and scrap betting tips from the biggest betting community website in Portugal 
-
-(PT-PT: www.academiadasapostas.com / EN: https://www.onlinebettingacademy.com/ / ES: https://www.academiadeapuestas.es/)
+(PT-PT: www.academiadasapostas.com | EN: https://www.onlinebettingacademy.com/)
 
 # Introduction
 The betting tips are provided everyday to anybody who access the website but, in order to check all the available tips you must follow a tedious process of opening one page per tip/game and also get past some annoying ads.
@@ -20,7 +19,7 @@ Not every match in the webapp has a betting tip available so it checks only the 
 This last scraping to get the final score is part of a interesting feature yet to be implemented.
 This feature would be an automatic way of checking if the tip was sucessful in predicting or not. With this information, every night it would calculate the day balance if one got to follow every tip given.
 
-Google Sheets spreadsheet with the daily scraping (text in Portuguese): https://docs.google.com/spreadsheets/d/1_NmlDRUS0ITWVpQ7E_ImzT01HRgX4ZHyQJ1omVA7yv4/edit?usp=sharing
+[Google Sheets spreadsheet with the daily scraping (text in Portuguese)](https://docs.google.com/spreadsheets/d/1_NmlDRUS0ITWVpQ7E_ImzT01HRgX4ZHyQJ1omVA7yv4/edit?usp=sharing)
 
 # Usage
 
