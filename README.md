@@ -9,12 +9,12 @@ This spider checks the webapp on the homepage which provides game information su
 
 Not every match in the webapp has a betting tip available so it checks only the ones who have, redirecting itself to the game page and finally extracting only the tip from that new page. Quick and simple. 
 
-# Features:
-* Scraps tips every morning for the day matches
-* Saves them in a txt file
-* Uploads txt file to a Google Sheets using Google Drive and Google Sheets API
-* Scraps games final scores every night for the tipped matches
-* Update the online worksheet with the final scores (Not working 100%)
+# Process
+1. Scraps tips every morning for the day matches
+2. Saves them in a txt file
+3. Uploads txt file to a Google Sheets using Google Drive and Google Sheets API
+4. Scraps games final scores every night for the tipped matches
+5. Update the online worksheet with the final scores (Not working 100%)
 
 This last scraping to get the final score is part of a interesting feature yet to be implemented.
 This feature would be an automatic way of checking if the tip was sucessful in predicting or not. With this information, every night it would calculate the day balance if one got to follow every tip given.
