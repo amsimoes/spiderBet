@@ -17,7 +17,8 @@ Not every match in the webapp has a betting tip available so it checks only the 
 5. Update the online worksheet with the final scores (Not working 100%)
 
 This last scraping to get the final score is part of a interesting feature yet to be implemented.
-This feature would be an automatic way of checking if the tip was sucessful in predicting or not. With this information, every night it would calculate the day balance if one got to follow every tip given.
+
+This feature would be an automatic way of checking if the tip was sucessful in predicting or not. With this information, every night it would calculate the day profit balance if one got to follow every tip given.
 
 [Google Sheets spreadsheet with the daily scraping (text in Portuguese)](https://docs.google.com/spreadsheets/d/1_NmlDRUS0ITWVpQ7E_ImzT01HRgX4ZHyQJ1omVA7yv4/edit?usp=sharing)
 
