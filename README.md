@@ -19,17 +19,17 @@ Not every match in the webapp has a betting tip available so it checks only the 
 This last scraping to get the final score is part of a interesting feature yet to be implemented.
 This feature would be an automatic way of checking if the tip was sucessful in predicting or not. With this information, every night it would calculate the day balance if one got to follow every tip given.
 
-Google Sheets spreadsheet with the daily scraping: https://docs.google.com/spreadsheets/d/1_NmlDRUS0ITWVpQ7E_ImzT01HRgX4ZHyQJ1omVA7yv4/edit?usp=sharing
+Google Sheets spreadsheet with the daily scraping (text in Portuguese): https://docs.google.com/spreadsheets/d/1_NmlDRUS0ITWVpQ7E_ImzT01HRgX4ZHyQJ1omVA7yv4/edit?usp=sharing
 
 # Usage
-$ scrapy crawl bets
-$ scrapy crawl scores
+`$ scrapy crawl bets`
+`$ scrapy crawl scores`
 
 There are 2 different spiders, one to scrap the tips (bets) and the other to scrap the scores (scores).
 I have them being called everyday using a cron script running in my server: the bets one at 10am and the scores one at 11pm after the games are finished.
 
 Afterwards, I call a python script to upload/update the google sheets:
-$ python3 sheets.py
+`$ python3 sheets.py`
 
 In the cronscript I also include this python script after the scrapy executions.
 
