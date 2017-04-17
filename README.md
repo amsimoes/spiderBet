@@ -1,5 +1,6 @@
 # spiderBet
-Scrapy spider to crawl and scrap betting tips from the biggest betting community website in Portugal (PT-PT: www.academiadasapostas.com / EN: https://www.onlinebettingacademy.com/ / ES: https://www.academiadeapuestas.es/)
+Scrapy spider to crawl and scrap betting tips from the biggest betting community website in Portugal 
+(PT-PT: www.academiadasapostas.com / EN: https://www.onlinebettingacademy.com/ / ES: https://www.academiadeapuestas.es/)
 
 # Introduction
 The betting tips are provided everyday to anybody who access the website but, in order to check all the available tips you must follow a tedious process of opening one page per tip/game and also get past some annoying ads.
