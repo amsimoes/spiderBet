@@ -20,7 +20,9 @@ This last scraping to get the final score is part of a interesting feature yet t
 
 This feature would be an automatic way of checking if the tip was sucessful in predicting or not. With this information, every night it would calculate the day profit balance if one got to follow every tip given.
 
-[Google Sheets spreadsheet with the daily scraping (text in Portuguese)](https://docs.google.com/spreadsheets/d/1_NmlDRUS0ITWVpQ7E_ImzT01HRgX4ZHyQJ1omVA7yv4/edit?usp=sharing)
+**SPREADSHEET:** [Google Sheets spreadsheet with the daily scraping (text in Portuguese)](https://docs.google.com/spreadsheets/d/1_NmlDRUS0ITWVpQ7E_ImzT01HRgX4ZHyQJ1omVA7yv4/edit?usp=sharing)
+
+(Server is not running anymore, so it isn't up to date.)
 
 # Usage
 
@@ -39,6 +41,6 @@ In the cronscript I also include this python script after the scrapy executions.
 
 # Issues
 * Scores spider scraping with sucess but broken when run from cron
-* Sometimes one scrapy crawl isn't enough to get all available data, most likely for requests failure, my fix being crawling 3 times in the cron script with 1 minute interval
+* Sometimes one scrapy crawl isn't enough to get all available data, most likely for requests failure, my workaround is crawling 3 times in the cron script with 1 minute interval
 * Data gathering only works for the day matches even if the webapp has tips for the next days that the user can see with some interaction
 * Spreadsheet/txt file order is from older to newer games/tips scraped, for an easier view it should show last gathered data on top
